@@ -1,3 +1,4 @@
+"""Example plugin to calculate square root of a number."""
 import math
 def sqrt(a):
     """Calculate square root of a number."""
