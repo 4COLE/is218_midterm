@@ -74,3 +74,4 @@ class Calculator:
     def undo_last(self) -> Union[str, None]:
         """Undo the last calculation."""
         return self.history_manager.undo_last()
+    
