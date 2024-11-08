@@ -1,4 +1,3 @@
-
 # Advanced Python Calculator
 
 This project is an advanced command-line calculator. It emphasizes professional software development practices, including the use of design patterns, logging, plugins, environment variables, and data management with Pandas.
@@ -12,14 +11,15 @@ This project is an advanced command-line calculator. It emphasizes professional 
   - [Environment Variables](#environment-variables)
   - [Pandas for Data Management](#pandas-for-data-management)
 - [Plugins](#plugins)
+  - [Adding New Plugins](#adding-new-plugins)
 - [Testing and Coverage](#testing-and-coverage)
 
 ## Setup Instructions
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/ign2-r/is218-midterm.git
-   cd is218-midterm
+   git clone https://github.com/4COLE/is218_midterm.git
+   cd is218_midterm
    ```
 
 2. **Install dependencies**
@@ -44,6 +44,10 @@ This project is an advanced command-line calculator. It emphasizes professional 
    pytest --cov=app --cov-report=html
    ```
    This generates a coverage report viewable in the `htmlcov` directory.
+
+5. **Run the program**
+    To use the calculator run this command
+    python3 -m app.main
 
 ## Usage Examples
 
@@ -98,6 +102,13 @@ Pandas is utilized for flexible management of calculation history:
 ## Plugins
 
 The plugin system enables dynamically loaded operations. Each plugin is structured to integrate easily with the main calculator without requiring changes to core code.
+
+### Adding New Plugins
+
+To add a new plugin, follow these steps:
+1. Create a new Python file in the `plugins` directory.
+2. Define the new operation as a function.
+3. Register the new plugin in the main calculator script.
 
 ## Testing and Coverage
 
