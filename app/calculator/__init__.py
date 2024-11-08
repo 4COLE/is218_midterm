@@ -48,18 +48,24 @@ class Calculator:
         for filename in os.listdir(plugins_dir):
             if filename.endswith(".py"):
                 module_name = filename[:-3]
-                module = importlib.import_module(f"{plugins_dir}.{module_name}")
+                module = importlib.import_module(f"plugins.{module_name}")
                 if hasattr(module, "plugin"):
                     self.operations.update(module.plugin)
 
-    def calculate_and_log(self, a: float, b: float, operation: str) -> Union[float, str]:
+    def calculate_and_log(self, a: float, b: Union[float, None], operation: str) -> Union[float, str]:
         """Calculate the result, log the operation in history, and return the result or error."""
-        # Call calculate, which will handle logging of invalid operations
-        result = self.calculation.calculate(a, b, operation)
-        if isinstance(result, (int, float)):
-            entry = f"{a} {operation} {b} = {result}"
-            self.history_manager.add_to_history(entry)
-        return result
+        func = self.operations.get(operation)
+        
+        # Call the operation based on single or double argument requirements
+        if func:
+            try:
+                result = func(a) if b is None else func(a, b)
+                entry = f"{operation}({a}) = {result}" if b is None else f"{a} {operation} {b} = {result}"
+                self.history_manager.add_to_history(entry)
+                return result
+            except Exception as e:
+                return f"Error occurred: {str(e)}"
+        return "Invalid operation."
 
     def get_history(self) -> list:
         """Return the calculation history."""
