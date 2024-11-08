@@ -12,7 +12,7 @@ load_dotenv()
 
 # Set up logging configuration to log to a file
 log_file = os.getenv("LOG_FILE", "calculator.log")
-log_level = os.getenv("LOG_LEVEL", "INFO").upper()
+log_level = os.getenv("LOG_LEVEL", "DEBUG").upper()
 
 logging.basicConfig(
     filename=log_file,
