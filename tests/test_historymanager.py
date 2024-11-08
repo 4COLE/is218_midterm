@@ -37,7 +37,7 @@ def test_save_history():
     history_manager = historymanager(history_file="test_history.csv")
     history_manager.add_to_history("5 * 5 = 25")
     history_manager.save_history()
-    """Reload history to verify that it was saved"""
+    # Reload history to verify that it was saved
     history_manager.load_history()
     assert history_manager.get_history() == ["5 * 5 = 25"]
 
