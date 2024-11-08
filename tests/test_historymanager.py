@@ -95,3 +95,4 @@ def test_clear_history():
     # Verify that the history is now empty
     assert history_manager.get_history() == []
     assert not os.path.exists("test_history.csv")
+    
