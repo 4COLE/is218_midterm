@@ -90,3 +90,4 @@ def test_calculation_unexpected_exception(a, b, operation):
     result = calc.calculate(a, b, operation)
     # Check that result is a string message and not a numeric value
     assert isinstance(result, str) and not result.isdigit()
+    
