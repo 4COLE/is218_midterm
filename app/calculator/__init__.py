@@ -59,8 +59,13 @@ class Calculator:
         # Call the operation based on single or double argument requirements
         if func:
             try:
-                result = func(a) if b is None else func(a, b)
-                entry = f"{operation}({a}) = {result}" if b is None else f"{a} {operation} {b} = {result}"
+                if operation == 'factorial':
+                    a = int(a)  # Convert to integer for factorial operation
+                    result = func(a)
+                    entry = f"{operation}({a}) = {result}"
+                else:
+                    result = func(a) if b is None else func(a, b)
+                    entry = f"{operation}({a}) = {result}" if b is None else f"{a} {operation} {b} = {result}"
                 self.history_manager.add_to_history(entry)
                 return result
             except Exception as e:
