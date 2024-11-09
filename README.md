@@ -13,6 +13,7 @@ This project is a command-line calculator. It focuses on professional software d
 - [Plugins](#plugins)
   - [Adding New Plugins](#adding-new-plugins)
 - [Testing and Coverage](#testing-and-coverage)
+- [Midterm Submission](#midterm-submission)
 
 ## Setup Instructions
 
@@ -117,3 +118,7 @@ The project includes extensive unit tests for each module. Run tests using:
 pytest --cov=app --cov-report=html
 ```
 Coverage reports are generated in `htmlcov/`.
+
+## Midterm Submission
+
+Midterm Video Submission: https://drive.google.com/file/d/1Jk8D1HPS6kZ8rgYfO6OfTMo9F-yadeLI/view?usp=sharing
