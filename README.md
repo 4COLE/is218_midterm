@@ -1,6 +1,6 @@
 # Advanced Python Calculator
 
-This project is an advanced command-line calculator. It emphasizes professional software development practices, including the use of design patterns, logging, plugins, environment variables, and data management with Pandas.
+This project is a command-line calculator. It focuses on professional software development practices, including the use of design patterns, logging, plugins, environment variables, and data management via Pandas.
 
 ## Table of Contents
 - [Setup Instructions](#setup-instructions)
@@ -23,7 +23,7 @@ This project is an advanced command-line calculator. It emphasizes professional 
    ```
 
 2. **Install dependencies**
-   The project requires Python 3.7+ and packages listed in `requirements.txt`.
+   The project requires Python 3.7+ (was built using 3.10) and packages listed in `requirements.txt`.
    ```bash
    pip install -r requirements.txt
    ```
