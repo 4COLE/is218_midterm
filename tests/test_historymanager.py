@@ -60,3 +60,17 @@ def test_clear_history():
     history_manager.add_to_history("1 + 1 = 2")
     history_manager.clear_history()
     assert history_manager.get_history() == []
+
+def test_load_history_nonexistent_file():
+    """Test loading history from a nonexistent file"""
+    # Use a nonexistent file path
+    hm = historymanager("nonexistent.csv")
+    hm.load_history()
+    assert len(hm.get_history()) == 0
+
+def test_clear_history_nonexistent_file():
+    """Test clearing history with nonexistent file"""
+    hm = historymanager("nonexistent.csv")
+    # This should not raise an exception
+    hm.clear_history()
+    assert len(hm.get_history()) == 0
